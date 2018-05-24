@@ -1,0 +1,14 @@
+@Controller
+public class TestController{
+  
+  @Autowired
+  private TestService testService;
+  
+  public String queryHotelList(){
+    ModelAndView mav =new ModelAndView("index");
+    List<Hotel> hotellist = testService.queryHotelList();
+    mav.addObject("hotellist",hotellist);
+    return mav;
+  }
+  
+}
